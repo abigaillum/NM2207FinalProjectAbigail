@@ -369,6 +369,14 @@ require(
         var quotes = document.getElementById("quotes");
         quotes.innerHTML = quoteArray[Math.floor((Math.random()*5)+1)]; //Sets the text in the quotes div to a random one from the quoteArray
 
+        //Some background music :)
+        var backgroundSound = new Audio("resources/naxsy.mp3");
+        backgroundSound.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        }, false);
+        backgroundSound.play();
+
         //Intended to add a function in which users can upload their own photos to be added onto the canvas, but did not manage to make it work
         /*
         var imageLoader = document.getElementById('imageLoader');
