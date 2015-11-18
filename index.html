@@ -1,0 +1,78 @@
+<!-- NM2207 Final Project -->
+<!-- Done By: Abigail Lum (A0116782B) -->
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!-- Link to our CSS style sheet -->
+        <link rel="stylesheet" type="text/css" href="css/appstyle.css">
+
+        <!-- Link to google font files -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Dawning+of+a+New+Day' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+        
+        <!-- Use the raphael.js library from the jslibs directory -->
+        <script type="text/javascript" src="jslibs/raphael.js"></script>
+        
+        <!--  Use the require.js module loader, and tell it where our main JavaScript file is  -->
+        <script type="text/javascript" data-main="appscripts/main.js" src="jslibs/require.js"> </script>
+        <title>My Dreamboard :)</title>
+    </head>
+
+  <body>
+    <header id="header">My Dreamboard!</header>
+    <div id='main'>
+
+        <div id="centerDiv"> </div>  <!--  <article>   article  </article> -->
+
+        <aside id="toolbar"><u>Tools</u><br>
+            <div id="square">Click to add a post-it!</div>&nbsp &nbsp <!-- Post-it created using styling in CSS -->
+            <div id="stickers">
+            <img src="resources/heart.png" id="heart"> 
+            &nbsp &nbsp
+            <img src="resources/like.png" id="like"> 
+            &nbsp
+            <img src="resources/star.png" id="star"></div><br><br><br><br>
+            <!-- Textbox for user to key in what they would like written on the post-it that they're adding -->
+            <input type="text" id="postitText" class="textbox" value="Key in what you want to be included in your post-it here" onclick="this.value=''"><br><br>
+
+            <div><u>Post-it Options</u><br>
+            <div class="controls">Size: <br>
+            <!-- Slider for user to indicate size; size value is shown beside the slider -->
+            <form><input id="mySliderSize" name="mySliderSize" type= "range" step="5" min="50" max="300" value="100" oninput="amount.value=mySliderSize.value"> <output name="amount" id="amount" for="mySliderSize">100</output></form>
+            <!-- Sliders for user to indicate hue, saturation and lightness values to change the color of the post-it -->
+            Hue: <br> 
+            <input id="mySliderH"  type= "range" step="0.05" min="0" max="360" value="0"><br>
+
+            Saturation: <br>
+            <input id="mySliderS"  type= "range" step="0.05" min="0" max="100" value="100"><br>
+
+            Lightness: <br>
+            <input id="mySliderL"  type= "range" step="0.05" min="0" max="100" value="100"><br>
+            </div><br>
+
+            <div><u>Image Options</u><br>
+            <!-- Textbox for user to paste the URL of the image that they want to add onto the canvas -->
+            <input type="text" id="imageURL" value="Paste image URL here" onclick="this.value=''">
+            <input class="btn" id="imageButton" type="button" value="Add Image!"><br><br>
+            <!-- <input type="file" id="imageLoader" name="imageLoader"/><input class="btn" id="imageButton2" type="button" value="Add Image!"><br>
+            <canvas id="imageCanvas"></canvas>--></div>
+
+            <div class="controls">Scale: <br>
+            <!-- Slider for user to indicate scale of the image; scale in percentage is shown beside the slider -->
+            <form><input id="mySliderImage" name="mySliderImage" type= "range" step="1" min="5" max="100" value="50" oninput="amount.value=mySliderImage.value"> <output name="amount" id="amount" for="mySliderImage">50</output>%</form></div>
+
+            <br><br>
+            
+            <input class="btn-block" id="clearButton" type="button" value="Clear Board">
+        </aside>
+
+    </div>
+    <footer><div id="quotes"></div><br>Credits: Abigail Lum, 2015
+    </footer>
+  </body>
+</html>
+
